@@ -51,7 +51,33 @@ namespace upanasis
                 });
             }
 
+            conexion.DescargarConexion();
             return usuarioList;
+        }
+
+
+        [WebMethod]
+        public int insertarUsuario(string pnombre, string snombre, string papellido, string sapellido, 
+            string email, int tipo, string user, string pass)
+        {
+            Conexion conexion = new Conexion();
+            conexion.ObtenerConexion();
+            SqlCommand cmm = new SqlCommand();
+            cmm.Parameters.AddWithValue("pnombre", pnombre );
+            cmm.Parameters.AddWithValue("snombre", snombre);
+            cmm.Parameters.AddWithValue("papellido", papellido);
+            cmm.Parameters.AddWithValue("sapellido", sapellido);
+            cmm.Parameters.AddWithValue("email", email);
+            cmm.Parameters.AddWithValue("tipo", tipo);
+            cmm.Parameters.AddWithValue("user", user);
+            cmm.Parameters.AddWithValue("pass", pass);
+            cmm.CommandText = "dbo.insertUsuario";
+            cmm.CommandType = System.Data.CommandType.StoredProcedure;
+            cmm.Connection = conexion.conexion;
+            int res = cmm.ExecuteNonQuery();
+
+            conexion.DescargarConexion();
+            return res;
         }
     }
 }

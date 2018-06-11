@@ -12,7 +12,7 @@ namespace upanasis.clase
 
         public SqlConnection ObtenerConexion()
         {
-            conexion = new SqlConnection("server=DESKTOP-JQG95L4\\SQLEXPRESS; database=bd_upanasis ; integrated security = true");
+            conexion = new SqlConnection("workstation id=upanasis.mssql.somee.com;packet size=4096;user id=miltonRutus_SQLLogin_1;pwd=2h9prc4bhd;data source=upanasis.mssql.somee.com;persist security info=False;initial catalog=upanasis");
             try
             {
                 conexion.Open();
