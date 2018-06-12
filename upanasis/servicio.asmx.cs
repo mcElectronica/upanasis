@@ -79,5 +79,58 @@ namespace upanasis
             conexion.DescargarConexion();
             return res;
         }
+
+        [WebMethod]
+        public List<Carrera> getCarrera()
+        {
+            Conexion conexion = new Conexion();
+            conexion.ObtenerConexion();
+            SqlCommand cmm = new SqlCommand();
+            cmm.CommandText = "dbo.listCarrera";
+            cmm.CommandType = System.Data.CommandType.StoredProcedure;
+            cmm.Connection = conexion.conexion;
+            SqlDataReader dr = cmm.ExecuteReader();
+
+            List<Carrera> carreraList = new List<Carrera>();
+            while (dr.Read())
+            {
+                carreraList.Add(new Carrera()
+                {
+                    id = dr.GetInt32(0),
+                    nombre = dr.GetString(1),
+                    idJornada = dr.GetInt32(2)
+                });
+            }
+
+            conexion.DescargarConexion();
+            return carreraList;
+        }
+
+        [WebMethod]
+        public List<Grado> getGrado(int id)
+        {
+            Conexion conexion = new Conexion();
+            conexion.ObtenerConexion();
+            SqlCommand cmm = new SqlCommand();
+            cmm.Parameters.AddWithValue("id", id);
+            cmm.CommandText = "dbo.getGrado";
+            cmm.CommandType = System.Data.CommandType.StoredProcedure;
+            cmm.Connection = conexion.conexion;
+            SqlDataReader dr = cmm.ExecuteReader();
+
+            List<Grado> gradoList = new List<Grado>();
+            while (dr.Read())
+            {
+                gradoList.Add(new Grado()
+                {
+                    id = dr.GetInt32(0),
+                    idCarrera = dr.GetInt32(1),
+                    nombre = dr.GetString(2)
+                });
+            }
+
+            conexion.DescargarConexion();
+            return gradoList;
+        }
     }
 }

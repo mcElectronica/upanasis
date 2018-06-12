@@ -70,6 +70,7 @@
     <Content Include="logindocente.aspx" />
     <Content Include="loginestudiante.aspx" />
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\somee.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -86,7 +87,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clase\Carrera.cs" />
     <Compile Include="clase\Conexion.cs" />
+    <Compile Include="clase\Grado.cs" />
     <Compile Include="clase\Usuario.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

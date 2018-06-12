@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\miltonRutus\Documents\Visual Studio 2015\Projects\Publicaciones Web</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>06/06/2018 11:58:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/06/2018 11:58:47</publishTime>
+    </File>
+    <File Include="bin/upanasis.dll">
+      <publishTime>06/11/2018 11:51:48</publishTime>
+    </File>
+    <File Include="index.aspx">
+      <publishTime>06/05/2018 23:26:04</publishTime>
+    </File>
+    <File Include="logindocente.aspx">
+      <publishTime>06/06/2018 23:27:28</publishTime>
+    </File>
+    <File Include="loginestudiante.aspx">
+      <publishTime>06/06/2018 23:22:07</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>06/06/2018 11:58:49</publishTime>
+    </File>
+    <File Include="panelDocente.aspx">
+      <publishTime>06/05/2018 23:21:41</publishTime>
+    </File>
+    <File Include="panelEstudiante.aspx">
+      <publishTime>06/05/2018 23:21:46</publishTime>
+    </File>
+    <File Include="registro.aspx">
+      <publishTime>06/07/2018 00:28:22</publishTime>
+    </File>
+    <File Include="registroDocente.aspx">
+      <publishTime>06/05/2018 23:41:01</publishTime>
+    </File>
+    <File Include="servicio.asmx">
+      <publishTime>06/06/2018 18:13:13</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/11/2018 11:51:48</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
