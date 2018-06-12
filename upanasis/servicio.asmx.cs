@@ -132,5 +132,34 @@ namespace upanasis
             conexion.DescargarConexion();
             return gradoList;
         }
+
+        [WebMethod]
+        public List<Usuario> listAlumnos(int idGrado)
+        {
+            Conexion conexion = new Conexion();
+            conexion.ObtenerConexion();
+            SqlCommand cmm = new SqlCommand();
+            cmm.Parameters.AddWithValue("idGrado", idGrado);
+            cmm.CommandText = "dbo.listAlumnosGrado";
+            cmm.CommandType = System.Data.CommandType.StoredProcedure;
+            cmm.Connection = conexion.conexion;
+            SqlDataReader dr = cmm.ExecuteReader();
+
+            List<Usuario> gradoList = new List<Usuario>();
+            while (dr.Read())
+            {
+                gradoList.Add(new Usuario()
+                {
+                    id = dr.GetInt32(0),
+                    pnombre = dr.GetString(1),
+                    snombre = dr.GetString(2),
+                    papellido = dr.GetString(3),
+                    sapellido = dr.GetString(4)
+                });
+            }
+
+            conexion.DescargarConexion();
+            return gradoList;
+        }
     }
 }

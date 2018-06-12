@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.aspx" />
+    <Content Include="insertarNotaAlumno.aspx" />
     <Content Include="logindocente.aspx" />
     <Content Include="loginestudiante.aspx" />
     <Content Include="packages.config" />
@@ -94,6 +95,13 @@
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="insertarNotaAlumno.aspx.cs">
+      <DependentUpon>insertarNotaAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="insertarNotaAlumno.aspx.designer.cs">
+      <DependentUpon>insertarNotaAlumno.aspx</DependentUpon>
     </Compile>
     <Compile Include="logindocente.aspx.cs">
       <DependentUpon>logindocente.aspx</DependentUpon>

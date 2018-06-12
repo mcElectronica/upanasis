@@ -53,24 +53,12 @@
               <th scope="col">Asignar Notas</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="bodyTable">
             <tr>
               <th scope="row">1</th>
               <td>Mark</td>
               <td>Otto</td>
               <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
             </tr>
           </tbody>
         </table>
@@ -82,6 +70,10 @@
     <script>
         $(document).ready(function () {
             var carrera;
+            var grado;
+            var cuerpoTable;
+            var countfile;
+
             //LOGIN
             if(sessionStorage.getItem("username") == null && sessionStorage.getItem("userpassword") == null) {
                 window.location.href="logindocente.aspx";
@@ -99,7 +91,6 @@
             //FIN LOGIN
 
             //llenar select carrera
-            
             $.ajax({
                 type: "POST",
                 url: "servicio.asmx/getCarrera",
@@ -123,7 +114,8 @@
             $('#selectCarrera').change(function () {
                 $('#selectGrado').html("<option selected>Seleccionar Grado</option>");
                 carrera = $(this).val();
-                console.log(carrera);
+                console.log("Carrera: " + carrera);
+                //llenar select grado
                 var parametros = { "id": carrera};
                 $.ajax({
                     type: "POST",
@@ -144,7 +136,52 @@
                     failure: function (r) {
 
                     }
-                });
+                });//fin select grado
+            });
+
+            $('#selectGrado').change(function () {
+                $('#bodyTable').html("");
+                grado = $(this).val();
+                console.log("Grado: " + grado);
+                var parametros = { "idGrado": grado };
+                //llevar tabla de Alumnos
+                $.ajax({
+                    type: "POST",
+                    url: "servicio.asmx/listAlumnos",
+                    data: JSON.stringify(parametros),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        countfile = 1;
+                        $.each(response.d, function (i, item) {
+                            cuerpoTable = "<tr>" +
+                                              "<th scope='row'>"+countfile+"</th>" +
+                                              "<td>"+item.pnombre + item.snombre+"</td>" +
+                                              "<td>"+item.papellido + item.sapellido+"</td>" +
+                                              "<td><a href='"+item.id+"' type='button' class='btnNota btn btn-outline-secondary'>Notas</a></td>" +
+                                            "</tr>";
+                            $('#bodyTable').append(cuerpoTable);
+                            countfile++;
+                        });
+
+                        $('.btnNota').click(function (event) {
+                            event.preventDefault();
+                            var iduser = $(this).attr('href');
+                            console.log("id: " + iduser);
+
+
+                            
+                        });
+
+                    },
+                    error: function (r) {
+
+                    },
+                    failure: function (r) {
+
+                    }
+                });//fin llenar table de Alumnos
             });
             
         });
