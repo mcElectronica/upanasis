@@ -10,6 +10,6 @@
 namespace upanasis {
     
     
-    public partial class insertarNotaAlumno {
+    public partial class agregarNotaAlumno {
     }
 }

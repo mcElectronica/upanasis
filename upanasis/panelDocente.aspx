@@ -30,7 +30,7 @@
     </nav>
     <br />
     <br />
-    <div class="container-fluid">
+    <div id="contenedor" class="container-fluid">
       <div class="row">
         <div class="col">
           <select id="selectCarrera" class="form-control">
@@ -159,7 +159,8 @@
                                               "<th scope='row'>"+countfile+"</th>" +
                                               "<td>"+item.pnombre + item.snombre+"</td>" +
                                               "<td>"+item.papellido + item.sapellido+"</td>" +
-                                              "<td><a href='"+item.id+"' type='button' class='btnNota btn btn-outline-secondary'>Notas</a></td>" +
+                                              "<td><a href='" + item.id + "' type='button' class='btnNota btn btn-outline-secondary'>Agregar Notas</a></td>" +
+                                              "<td><a href='" + item.id + "' type='button' class='btnVerNota btn btn-outline-secondary'>Ver Notas</a></td>" +
                                             "</tr>";
                             $('#bodyTable').append(cuerpoTable);
                             countfile++;
@@ -169,9 +170,60 @@
                             event.preventDefault();
                             var iduser = $(this).attr('href');
                             console.log("id: " + iduser);
+                            localStorage.setItem("Userid", iduser);
 
+                            //cambio de contenido 
+                            $.ajax({
+                                mimeType: 'text/html; charset=utf-8',
+                                type: "GET",
+                                url: "agregarNotaAlumno.aspx",
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "html",
+                                async: true,
+                                success: function (response) {
+                                    console.log(response);
+                                    $('#contenedor').html(response);
+
+                                },
+                                error: function (r) {
+
+                                },
+                                failure: function (r) {
+
+                                }
+                            });//fin cambio de contenido
 
                             
+                        });
+
+                        $('.btnVerNota').click(function (event) {
+                            event.preventDefault();
+                            var iduser = $(this).attr('href');
+                            console.log("id: " + iduser);
+                            localStorage.setItem("Userid", iduser);
+
+                            //cambio de contenido 
+                            $.ajax({
+                                mimeType: 'text/html; charset=utf-8',
+                                type: "GET",
+                                url: "verNotas.aspx",
+                                contentType: "application/json; charset=utf-8",
+                                dataType: "html",
+                                async: true,
+                                success: function (response) {
+                                    console.log(response);
+                                    $('#contenedor').html(response);
+
+                                },
+                                error: function (r) {
+
+                                },
+                                failure: function (r) {
+
+                                }
+                            });//fin cambio de contenido
+
+
                         });
 
                     },

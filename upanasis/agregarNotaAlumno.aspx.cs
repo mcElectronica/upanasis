@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace upanasis
 {
-    public partial class insertarNotaAlumno : System.Web.UI.Page
+    public partial class agregarNotaAlumno : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

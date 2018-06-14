@@ -12,7 +12,7 @@ namespace upanasis.clase
 
         public SqlConnection ObtenerConexion()
         {
-            conexion = new SqlConnection("workstation id=upanasis.mssql.somee.com;packet size=4096;user id=miltonRutus_SQLLogin_1;pwd=2h9prc4bhd;data source=upanasis.mssql.somee.com;persist security info=False;initial catalog=upanasis");
+            conexion = new SqlConnection("workstation id=bdupanasis.mssql.somee.com;packet size=4096;user id=irvinpleytez_SQLLogin_1;pwd=xu7qmj2a2v;data source=bdupanasis.mssql.somee.com;persist security info=False;initial catalog=bdupanasis");
             try
             {
                 conexion.Open();

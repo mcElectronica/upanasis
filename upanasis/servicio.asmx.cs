@@ -161,5 +161,82 @@ namespace upanasis
             conexion.DescargarConexion();
             return gradoList;
         }
+
+        [WebMethod]
+        public List<CursoAsignado> listCursosAsignados(int idUser)
+        {
+            Conexion conexion = new Conexion();
+            conexion.ObtenerConexion();
+            SqlCommand cmm = new SqlCommand();
+            cmm.Parameters.AddWithValue("idUser", idUser);
+            cmm.CommandText = "dbo.listCursosAlumno";
+            cmm.CommandType = System.Data.CommandType.StoredProcedure;
+            cmm.Connection = conexion.conexion;
+            SqlDataReader dr = cmm.ExecuteReader();
+
+            List<CursoAsignado> cursoAsignado = new List<CursoAsignado>();
+            while (dr.Read())
+            {
+                cursoAsignado.Add(new CursoAsignado()
+                {
+                    id = dr.GetInt32(0),
+                    nombre = dr.GetString(1),
+                    user = dr.GetString(2)
+                   
+                });
+            }
+
+            conexion.DescargarConexion();
+            return cursoAsignado;
+        }
+
+        [WebMethod]
+        public int agregarNota(int idCursoAsig, int valor, string unidad)
+        {
+            Conexion conexion = new Conexion();
+            conexion.ObtenerConexion();
+            SqlCommand cmm = new SqlCommand();
+            cmm.Parameters.AddWithValue("idCursoAgisnado", idCursoAsig);
+            cmm.Parameters.AddWithValue("valor", valor);
+            cmm.Parameters.AddWithValue("unidad", unidad);
+            cmm.CommandText = "dbo.insertNota";
+            cmm.CommandType = System.Data.CommandType.StoredProcedure;
+            cmm.Connection = conexion.conexion;
+            int res = cmm.ExecuteNonQuery();
+
+           
+            conexion.DescargarConexion();
+            return res;
+        }
+
+        [WebMethod]
+        public List<Notas> verNotas(int idUser, string unidad)
+        {
+            Conexion conexion = new Conexion();
+            conexion.ObtenerConexion();
+            SqlCommand cmm = new SqlCommand();
+            cmm.Parameters.AddWithValue("idUser", idUser);
+            cmm.Parameters.AddWithValue("unidad", unidad);
+            cmm.CommandText = "dbo.verNotas";
+            cmm.CommandType = System.Data.CommandType.StoredProcedure;
+            cmm.Connection = conexion.conexion;
+            SqlDataReader dr = cmm.ExecuteReader();
+
+            List<Notas> cursoAsignado = new List<Notas>();
+            while (dr.Read())
+            {
+                cursoAsignado.Add(new Notas()
+                {
+                    user = dr.GetString(0),
+                    CursoAsignado = dr.GetString(4),
+                    valor = dr.GetInt32(5),
+                    unidad = dr.GetString(6)
+
+                });
+            }
+
+            conexion.DescargarConexion();
+            return cursoAsignado;
+        }
     }
 }

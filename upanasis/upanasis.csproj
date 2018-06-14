@@ -66,8 +66,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="agregarNotaAlumno.aspx" />
     <Content Include="index.aspx" />
-    <Content Include="insertarNotaAlumno.aspx" />
     <Content Include="logindocente.aspx" />
     <Content Include="loginestudiante.aspx" />
     <Content Include="packages.config" />
@@ -85,23 +85,26 @@
     <Content Include="registro.aspx" />
     <Content Include="registroDocente.aspx" />
     <Content Include="servicio.asmx" />
+    <Content Include="verNotas.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="agregarNotaAlumno.aspx.cs">
+      <DependentUpon>agregarNotaAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="agregarNotaAlumno.aspx.designer.cs">
+      <DependentUpon>agregarNotaAlumno.aspx</DependentUpon>
+    </Compile>
     <Compile Include="clase\Carrera.cs" />
     <Compile Include="clase\Conexion.cs" />
+    <Compile Include="clase\CursoAsignado.cs" />
     <Compile Include="clase\Grado.cs" />
+    <Compile Include="clase\Notas.cs" />
     <Compile Include="clase\Usuario.cs" />
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="insertarNotaAlumno.aspx.cs">
-      <DependentUpon>insertarNotaAlumno.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="insertarNotaAlumno.aspx.designer.cs">
-      <DependentUpon>insertarNotaAlumno.aspx</DependentUpon>
     </Compile>
     <Compile Include="logindocente.aspx.cs">
       <DependentUpon>logindocente.aspx</DependentUpon>
@@ -131,6 +134,13 @@
     <Compile Include="servicio.asmx.cs">
       <DependentUpon>servicio.asmx</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="verNotas.aspx.cs">
+      <DependentUpon>verNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verNotas.aspx.designer.cs">
+      <DependentUpon>verNotas.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
