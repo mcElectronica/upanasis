@@ -49,6 +49,8 @@
                             sessionStorage.setItem("username", item.user);
                             sessionStorage.setItem("userpassword", item.pass);
                            
+                            localStorage.setItem("Userid", item.id);
+                            localStorage.setItem("Username", item.pnombre);
 
                         });
                         

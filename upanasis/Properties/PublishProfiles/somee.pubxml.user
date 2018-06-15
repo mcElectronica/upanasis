@@ -9,6 +9,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     <_PublishTargetUrl>C:\Users\miltonRutus\Documents\Visual Studio 2015\Projects\Publicaciones Web</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
+    <File Include="agregarNotaAlumno.aspx">
+      <publishTime>06/14/2018 13:55:35</publishTime>
+    </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>06/06/2018 11:58:48</publishTime>
     </File>
@@ -49,13 +52,16 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/06/2018 11:58:47</publishTime>
     </File>
     <File Include="bin/upanasis.dll">
-      <publishTime>06/11/2018 11:51:48</publishTime>
+      <publishTime>06/14/2018 19:40:06</publishTime>
+    </File>
+    <File Include="default.aspx">
+      <publishTime>06/14/2018 19:33:41</publishTime>
     </File>
     <File Include="index.aspx">
       <publishTime>06/05/2018 23:26:04</publishTime>
     </File>
     <File Include="logindocente.aspx">
-      <publishTime>06/06/2018 23:27:28</publishTime>
+      <publishTime>06/11/2018 18:58:31</publishTime>
     </File>
     <File Include="loginestudiante.aspx">
       <publishTime>06/06/2018 23:22:07</publishTime>
@@ -64,7 +70,7 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>06/06/2018 11:58:49</publishTime>
     </File>
     <File Include="panelDocente.aspx">
-      <publishTime>06/05/2018 23:21:41</publishTime>
+      <publishTime>06/14/2018 15:10:03</publishTime>
     </File>
     <File Include="panelEstudiante.aspx">
       <publishTime>06/05/2018 23:21:46</publishTime>
@@ -77,6 +83,9 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
     </File>
     <File Include="servicio.asmx">
       <publishTime>06/06/2018 18:13:13</publishTime>
+    </File>
+    <File Include="verNotas.aspx">
+      <publishTime>06/14/2018 16:13:04</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>06/11/2018 11:51:48</publishTime>

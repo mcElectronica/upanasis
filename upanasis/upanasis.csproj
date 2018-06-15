@@ -67,11 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agregarNotaAlumno.aspx" />
-    <Content Include="index.aspx" />
+    <Content Include="default.aspx" />
     <Content Include="logindocente.aspx" />
     <Content Include="loginestudiante.aspx" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\somee.pubxml" />
+    <None Include="Properties\PublishProfiles\upanasis.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -102,8 +103,8 @@
     <Compile Include="clase\Grado.cs" />
     <Compile Include="clase\Notas.cs" />
     <Compile Include="clase\Usuario.cs" />
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="logindocente.aspx.cs">
